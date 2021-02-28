@@ -1,4 +1,4 @@
-from cigithubactions import bonjour
+from ci_github_actions import bonjour
 
 
 def test_helloworld():
