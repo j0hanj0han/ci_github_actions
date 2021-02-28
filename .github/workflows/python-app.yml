@@ -35,4 +35,4 @@ jobs:
       run: |
         pytest
     - name: Run the job
-      run: python bonjour.py
+      run: python ci_github_actions/bonjour.py
