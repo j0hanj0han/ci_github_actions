@@ -4,11 +4,11 @@
   uses: cross-the-world/ssh-pipeline@v1.2.0
   with:
     # ssh remote host
-    host: 
+    host: ${{ secrets.REMOTE_HOST }}
     # ssh remote port
-    port: 22 # optional, default is 22
+    port: ${{ secrets.REMOTE_PORT }} # optional, default is 22
     # ssh remote user
-    user: "pi"
+    user: ${{ secrets.REMOTE_USER }}
     # content of ssh private key. ex raw content of ~/.ssh/id_rsa
     key: # optional
     # ssh remote password
