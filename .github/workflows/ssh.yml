@@ -1,4 +1,4 @@
-name: Python application
+name: SSH connection
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         # ssh remote host
         host: ${{ secrets.REMOTE_HOST }}
         # ssh remote port
-        port: ${{ secrets.REMOTE_PORT }} # optional, default is 22
+        port: 22 # optional, default is 22
         # ssh remote user
         user: ${{ secrets.REMOTE_USER }}
         # content of ssh private key. ex raw content of ~/.ssh/id_rsa
