@@ -2,3 +2,5 @@
 Sandbox for github actions
 
 [![.github/workflows/ssh.yml](https://github.com/j0hanj0han/ci_github_actions/actions/workflows/ssh.yml/badge.svg)](https://github.com/j0hanj0han/ci_github_actions/actions/workflows/ssh.yml)
+
+[![Python application](https://github.com/j0hanj0han/ci_github_actions/actions/workflows/python-app.yml/badge.svg)](https://github.com/j0hanj0han/ci_github_actions/actions/workflows/python-app.yml)
