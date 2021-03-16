@@ -15,6 +15,10 @@ jobs:
   # You may pin to the exact commit or the version.
   # uses: cross-the-world/ssh-pipeline@7f022867934a210af826af99ef80d96f03a094d5
       uses: appleboy/ssh-action@master
+      env:
+        FOO: "BAR"
+        BAR: "FOO"
+        REPO_URL: ${{ $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git  }}
       with:
         # ssh remote host
         host: ${{ secrets.REMOTE_HOST }}
@@ -24,13 +28,12 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         # content of ssh private key. ex raw content of ~/.ssh/id_rsa
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
+        envs: REPO_URL, FOO, BAR
         script: | 
-          git clone $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git 
-          folder= (${GITHUB_REPOSITORY//// })
-          echo ${folder[1]}
-          cd ${folder[1]}
+          git clone $REPO_URL
           virtualenv venv 
           source venv/bin/activate
           pip3 install numpy
+          pip3 freeze
           ls -ll
         
