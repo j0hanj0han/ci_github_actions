@@ -18,7 +18,6 @@ jobs:
       env:
         FOO: "BAR"
         BAR: "FOO"
-        REPO_URL: ${{ $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git  }}
       with:
         # ssh remote host
         host: ${{ secrets.REMOTE_HOST }}
@@ -28,9 +27,9 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         # content of ssh private key. ex raw content of ~/.ssh/id_rsa
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
-        envs: REPO_URL, FOO, BAR
+        envs: REPO_URL, FOO, BAR, $GITHUB_SERVER_URL
         script: | 
-          git clone $REPO_URL
+          git clone $GITHUB_SERVER_URL.git
           virtualenv venv 
           source venv/bin/activate
           pip3 install numpy
