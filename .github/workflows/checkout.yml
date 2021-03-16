@@ -31,7 +31,7 @@ jobs:
         envs: REPO_URL, FOO, BAR, env.TEST, env.TEST2
         script: | 
           echo ${{ env.TEST }}
-          echo {{ env.TEST2 }}
+          echo ${{ env.TEST2 }}
           echo '-------'
           ls -ll
         
