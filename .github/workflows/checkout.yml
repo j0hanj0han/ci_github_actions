@@ -16,7 +16,7 @@ jobs:
         BAR: "FOO"
         REPO_URL: "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
         FOLDER: "(${GITHUB_REPOSITORY//// })"
-        TEST: ${{ GITHUB_SERVER_URL }}
+        TEST: "${{ GITHUB_SERVER_URL }}"
       with:
         # ssh remote host
         host: ${{ secrets.REMOTE_HOST }}
