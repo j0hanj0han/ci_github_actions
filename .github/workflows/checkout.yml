@@ -15,6 +15,7 @@ jobs:
         BAR: "FOO"
         TEST: ${{ github.repository }}
         TEST2: ${{ github.workspace }}
+        TEST4: $GITHUB_REPOSITORY
     
     steps:
     - name: deploy-ssh
@@ -28,9 +29,9 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         # content of ssh private key. ex raw content of ~/.ssh/id_rsa
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
-        envs: REPO_URL, FOO, BAR, env.TEST, env.TEST2
+        envs: REPO_URL, FOO, BAR, env.TEST, env.TEST2, env.TEST4
         script: | 
-          echo $GITHUB_REPOSITORY
+          echo ${{ env.TEST4 }}
           git clone "https://github.com/${{ env.TEST }}.git"
           echo '-------'
           ls -ll
