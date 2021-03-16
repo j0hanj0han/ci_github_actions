@@ -15,7 +15,7 @@ jobs:
         BAR: "FOO"
         TEST: ${{ github.repository }}
         TEST2: ${{ github.workspace }}
-        TEST3: ${{ GITHUB_REPOSITORY }}
+        TEST3: ${{ env.GITHUB_REPOSITORY }}
     
     steps:
     - name: deploy-ssh
