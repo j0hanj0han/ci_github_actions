@@ -24,11 +24,12 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         # content of ssh private key. ex raw content of ~/.ssh/id_rsa
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
-        envs: REPO_URL, FOO, BAR, TEST
+        envs: REPO_URL, FOO, BAR, TEST, $GITHUB_SERVER_URL, ${{ env.GITHUB_SERVER_URL }}
         script: | 
           echo $TEST
           echo '-------'
           echo $GITHUB_SERVER_URL
+          echo ${{ env.GITHUB_SERVER_URL }}
           virtualenv venv 
           source venv/bin/activate
           pip3 install numpy
