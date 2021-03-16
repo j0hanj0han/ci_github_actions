@@ -3,15 +3,18 @@ on:
   push:
     branches: [ main ]
 
-env:
-        FOO: "BAR"
-        BAR: "FOO"
-        TEST: ${{ GITHUB_SERVER_URL }}
+
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    env:
+        FOO: "BAR"
+        BAR: "FOO"
+        TEST: ${{ github.repository }}
+    
     steps:
     - name: deploy-ssh
       uses: appleboy/ssh-action@master
