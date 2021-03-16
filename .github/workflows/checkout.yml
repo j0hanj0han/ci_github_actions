@@ -6,7 +6,7 @@ on:
 env:
         FOO: "BAR"
         BAR: "FOO"
-        TEST: ${{ env.GITHUB_SERVER_URL }}
+        TEST: ${{ GITHUB_SERVER_URL }}
 
 
 jobs:
