@@ -31,8 +31,9 @@ jobs:
         # execute commands on ssh
         script: | 
           git clone $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git 
-          folder = (${$GITHUB_REPOSITORY//// })
-          echo ${folder[0]}
+          folder = (${GITHUB_REPOSITORY//// })
+          echo ${folder[1]}
+          cd ${folder[1]}
           virtualenv venv 
           source venv/bin/activate
           pip3 install numpy
