@@ -2,19 +2,19 @@ name: Checkout repo via SSH
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
+env:
+        FOO: "BAR"
+        BAR: "FOO"
+        TEST: ${{ env.GITHUB_SERVER_URL }}
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: ssh-pipeline
+    - name: deploy-ssh
       uses: appleboy/ssh-action@master
-      env:
-        FOO: "BAR"
-        BAR: "FOO"
-        TEST: ${{ env.GITHUB_SERVER_URL }}
       with:
         # ssh remote host
         host: ${{ secrets.REMOTE_HOST }}
@@ -24,15 +24,9 @@ jobs:
         username: ${{ secrets.REMOTE_USER }}
         # content of ssh private key. ex raw content of ~/.ssh/id_rsa
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
-        envs: REPO_URL, FOO, BAR, TEST, $GITHUB_SERVER_URL, ${{ env.GITHUB_SERVER_URL }}
+        envs: REPO_URL, FOO, BAR, env.TEST
         script: | 
-          echo $TEST
-          echo '-------'
-          echo $GITHUB_SERVER_URL
           echo ${{ env.GITHUB_SERVER_URL }}
-          virtualenv venv 
-          source venv/bin/activate
-          pip3 install numpy
-          pip3 freeze
+          echo '-------'
           ls -ll
         
