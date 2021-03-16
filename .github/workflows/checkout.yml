@@ -18,7 +18,7 @@ jobs:
       env:
         FOO: "BAR"
         BAR: "FOO"
-        REPO_URL: ${{ $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git  }}
+        REPO_URL: "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git"
       with:
         # ssh remote host
         host: ${{ secrets.REMOTE_HOST }}
@@ -30,7 +30,7 @@ jobs:
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
         envs: REPO_URL, FOO, BAR, $GITHUB_SERVER_URL, $GITHUB_REPOSITORY
         script: | 
-          git clone $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
+          git clone REPO_URL
           folder=(${GITHUB_REPOSITORY//// })
           echo $folder
           cd $folder
