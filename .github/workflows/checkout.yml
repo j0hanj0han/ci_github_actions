@@ -30,8 +30,7 @@ jobs:
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
         envs: REPO_URL, FOO, BAR, env.TEST, env.TEST2, env.TEST4
         script: | 
-          echo ${{ env.TEST4 }}
-          git clone "https://github.com/${{ env.TEST }}.git"
+          bash install_repo.sh
           echo '-------'
           ls -ll
 
@@ -53,5 +52,5 @@ jobs:
         # execute commands on ssh
         script: |
            echo $GITHUB_REPOSITORY
-           python bonjour.py
+           bash install_repo.sh
         
