@@ -30,7 +30,7 @@ jobs:
         key: ${{ secrets.REMOTE_PRIVATE_KEY }} # optional
         envs: REPO_URL, FOO, BAR, env.TEST, env.TEST2, env.TEST4
         script: | 
-          bash install_repo.sh
+          echo "skip install"
           echo '-------'
           ls -ll
 
@@ -52,5 +52,5 @@ jobs:
         # execute commands on ssh
         script: |
            echo $GITHUB_REPOSITORY
-           bash install_repo.sh
+           bash install_repo.sh $GITHUB_SERVER_URL $GITHUB_REPOSITORY
         
