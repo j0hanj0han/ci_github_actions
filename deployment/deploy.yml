@@ -32,13 +32,13 @@
         virtualenv_python: python3
 
     - name: activate virtualenv 
-      shell: source /home/pi/Projects/mygfxhat/venv/bin/activate
+      shell: source /home/pi/Projects/mygfxhat/venv/bin/activate && python3 /home/pi/Projects/mygfxhat/mygfxhat/main.py
       args:
         executable: /bin/bash
 
 
-    - name: Launch display
-      shell: python3 /home/pi/Projects/mygfxhat/mygfxhat/main.py
+    # - name: Launch display
+    #   shell: python3 /home/pi/Projects/mygfxhat/mygfxhat/main.py
 
     # - name: "Activate virtual env"
     # - name: "Install dependencies"
