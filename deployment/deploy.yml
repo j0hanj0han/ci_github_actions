@@ -23,12 +23,11 @@
     #     executable: pip3
     #     become: yes
     #     become_user: root
-    - name: virtualenv activate
-      shell: . venv/bin/activate
 
     - name: Install requirements
       pip: 
         requirements: /home/pi/Projects/mygfxhat/requirements.txt
+        virtualenv_command: virtualenv
         virtualenv: /home/pi/Projects/mygfxhat/venv
         virtualenv_python: python3
       
