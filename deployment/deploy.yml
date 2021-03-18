@@ -27,8 +27,8 @@
     - name: virtualenv activate
       shell: . /home/pi/Projects/mygfxhat/myenv/bin/activate
     
-    - name: Launch display
-      shell: python2 /home/pi/Projects/mygfxhat/mygfxhat/main.py
+    # - name: Launch display
+    #   shell: python2 /home/pi/Projects/mygfxhat/mygfxhat/main.py
 
     # - name: "Activate virtual env"
     # - name: "Install dependencies"

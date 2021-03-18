@@ -1,0 +1,31 @@
+name: Run ansible playbook
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run Ansible playbook
+      uses: dawidd6/action-ansible-playbook@v2.2.0
+      with:
+        playbook: deploy.yml
+        directory: ./deployment/
+        key: ${{secrets.REMOTE_PRIVATE_KEY}}
+        inventory: |
+          [all]
+          ${{ secrets.REMOTE_HOST }}
+
+          [group1]
+          ${{ secrets.REMOTE_HOST }}
+        vault_password: ${{secrets.VAULT_PASSWORD}}
+        options: |
+          --limit group1
+          --extra-vars hello=there
+          --verbose
