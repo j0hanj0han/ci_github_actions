@@ -12,15 +12,15 @@
     # - name: Apt-get update
     #   shell: sudo apt-get update
     
-    # - name: Install python3
-    #   shell: sudo apt-get -y install python3
+    - name: Install virtualenv 
+      shell: sudo pip install virtualenv
     
-    - name: Install virtualenv via pip
-      pip:
-        name: virtualenv
-        executable: pip3
-        become: yes
-        become_user: root
+    # - name: Install virtualenv via pip
+    #   pip:
+    #     name: virtualenv
+    #     executable: pip3
+    #     become: yes
+    #     become_user: root
 
     - name: Install requirements
       pip: 
