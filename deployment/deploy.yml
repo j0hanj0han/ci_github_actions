@@ -30,11 +30,10 @@
         virtualenv_command: virtualenv
         virtualenv: /home/pi/Projects/mygfxhat/venv
         virtualenv_python: python3
-        
+
     - name: activate virtualenv 
-      command: /home/pi/Projects/mygfxhat/venv/bin/activate
-      become: yes
-      become_user: root 
+      shell: source /home/pi/Projects/mygfxhat/venv/bin/activate
+
 
     - name: Launch display
       shell: python3 /home/pi/Projects/mygfxhat/mygfxhat/main.py
