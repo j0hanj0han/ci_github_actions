@@ -27,14 +27,14 @@
     - name: Install requirements
       pip: 
         requirements: /home/pi/Projects/mygfxhat/requirements.txt
-        virtualenv: /home/pi/Projects/mygfxhat/myenv
-        virtualenv_python: python2
+        virtualenv: /home/pi/Projects/mygfxhat/venv
+        virtualenv_python: python3
       
     - name: virtualenv activate
-      shell: . /home/pi/Projects/mygfxhat/myenv/bin/activate
+      shell: . /home/pi/Projects/mygfxhat/venv/bin/activate
     
-    # - name: Launch display
-    #   shell: python2 /home/pi/Projects/mygfxhat/mygfxhat/main.py
+    - name: Launch display
+      shell: python3 /home/pi/Projects/mygfxhat/mygfxhat/main.py
 
     # - name: "Activate virtual env"
     # - name: "Install dependencies"
