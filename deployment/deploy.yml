@@ -13,7 +13,9 @@
     #   shell: sudo apt-get update
     
     - name: Install virtualenv 
-      shell: sudo pip install virtualenv
+      shell: pip3 install virtualenv
+      become: yes
+      become_user: root
     
     # - name: Install virtualenv via pip
     #   pip:
