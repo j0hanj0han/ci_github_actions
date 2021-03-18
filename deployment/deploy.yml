@@ -1,8 +1,8 @@
 - hosts: group1
   
   tasks:
-    - name: Ping servers
-      ping:
+    # - name: Ping servers
+    #  ping:
 
     - name: Checkout the Gfx hat library repo
       git:
