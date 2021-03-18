@@ -31,3 +31,4 @@ jobs:
           --limit group1
           --extra-vars hello=there
           --verbose
+          -u pi
