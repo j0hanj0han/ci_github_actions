@@ -1,4 +1,4 @@
-- hosts: vms
+- hosts: group1
   
   tasks:
     - name: Ping servers
