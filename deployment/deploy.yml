@@ -33,6 +33,8 @@
 
     - name: activate virtualenv 
       shell: source /home/pi/Projects/mygfxhat/venv/bin/activate
+      args:
+        executable: /bin/bash
 
 
     - name: Launch display
