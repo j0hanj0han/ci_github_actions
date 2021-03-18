@@ -17,8 +17,8 @@
     
     - name: Install virtualenv via pip
       pip:
-      name: virtualenv
-      executable: pip2
+        name: virtualenv
+        executable: pip2
 
     - name: Install requirements
       pip: 
