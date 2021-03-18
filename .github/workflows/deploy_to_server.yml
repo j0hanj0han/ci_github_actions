@@ -16,7 +16,7 @@ jobs:
       uses: dawidd6/action-ansible-playbook@v2.2.0
       with:
         playbook: deploy.yml
-        directory: ./deployment/
+        directory: deployment
         key: ${{secrets.REMOTE_PRIVATE_KEY}}
         inventory: |
           [all]
