@@ -15,8 +15,10 @@
     # - name: Install python3
     #   shell: sudo apt-get -y install python3
     
-    - name: Install virtualenv
-      shell: pip install virtualenv
+    - name: Install virtualenv via pip
+      pip:
+      name: virtualenv
+      executable: pip2
 
     - name: Install requirements
       pip: 
