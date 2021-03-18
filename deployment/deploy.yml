@@ -24,7 +24,7 @@
     #     become: yes
     #     become_user: root
     - name: virtualenv activate
-      shell: . /home/pi/Projects/mygfxhat/venv/bin/activate
+      shell: . venv/bin/activate
 
     - name: Install requirements
       pip: 
