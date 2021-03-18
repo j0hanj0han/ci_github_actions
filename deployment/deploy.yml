@@ -19,6 +19,8 @@
       pip:
         name: virtualenv
         executable: pip3
+        become: yes
+        become_user: root
 
     - name: Install requirements
       pip: 
